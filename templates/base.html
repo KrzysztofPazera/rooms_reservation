@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkslateblue;
+}
+
+li.header {
+  float: left;
+}
+
+li.header a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: darkslategray;
+}
+
+.active {
+  background-color: #b242ac;
+}
+    </style>
+</head>
+<body>
+<ul class="header">
+    <li class="header"><a href="{%  url 'index' %}">System rezerwacji sal</a></li>
+    <li class="header"><a href="{%  url 'rooms_list' %}"> Lista wszystkich sal</a></li>
+    <li class="header"><a href="{% url 'add_room' %}"> Dodaj sale</a></li>
+
+
+</ul>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+    <p>Nazwa: <input type="text" name="name"></p>
+    <p>Pojemnosc sali: <input type="number" min="1" name="capacity" ></p>
+    <p>Projektor: <input type="checkbox" value="True" name ="projector_availability"></p>
+
+
+
+    <p><input type="submit" value="Dodaj"></p>
+
+</form>
+{%  endblock %}

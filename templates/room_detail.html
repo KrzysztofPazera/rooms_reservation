@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+    {% for obj in objects %}
+    <p>Nazwa: <input type="text" value="{{ obj.name }}" name="name"></p>
+    <p>Pojemnosc sali: <input type="number" value="{{ obj.capacity }}" min="1" name="capacity" ></p>
+
+    <p>Projektor: <input type="checkbox" value="True" name ="projector_availability"></p>
+
+
+
+    <p><input type="submit" value="Zapisz zmiany"></p>
+    {% endfor %}
+</form>
+{%  endblock %}

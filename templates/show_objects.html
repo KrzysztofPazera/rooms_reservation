@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table">
+    <tr>
+    <th >#</th>
+    <th >Nazwa</th>
+    <th >Pojemnośś</th>
+    <th >Dostepnośc projektora</th>
+
+
+</tr>
+{%  for obj in objects %}
+    <tr>
+    <th >{{ obj.id }} </th>
+         <td ><a href="{{ obj.get_detail_url }}"> {{ obj.name }} </a></td>
+         <td >{{ obj.capacity }} </td>
+    {% if obj.projector_availability%}
+        <td><font color="green">&#9745</font></td>
+    {% else %}
+        <td><font color="red"> &#9746</font></td>
+    {% endif %}
+    <td> Edytuj   </td>
+    <td> Usuń   </td>
+    <td> Zarezerwuj   </td>
+    </tr>
+{%  endfor %}
+
+{% endblock %}
+</table>
